@@ -1,7 +1,6 @@
----
-title: "COVID-19 Datasets with Coordinates"
-output: html_document
----
+
+
+# COVID-19 Datasets with Coordinates
 
 
 
@@ -234,10 +233,6 @@ print(hawaii, vp = haw)
 
 ```r
 tm_shape(dtWD) + tm_borders() + tm_fill("deaths", n = 10) + tm_layout(frame = FALSE, legend.show = TRUE)
-```
-
-```
-## Warning: The shape dtWD contains empty units.
 ```
 
 <img src="README_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
