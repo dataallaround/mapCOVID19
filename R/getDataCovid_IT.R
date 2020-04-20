@@ -1,11 +1,11 @@
 
 
-getDataCovidIT <- function(date, level = c("regioni", "province"), download_dir = NULL)
+getDataCovid_IT <- function(date, level = c("regioni", "province"), download_dir = NULL)
 {
 
   library(stringr)
 
-  level <- match.arg(level, choices = eval(formals(getDataCovidIT)$level))
+  level <- match.arg(level, choices = eval(formals(getDataCovid_IT)$level))
   date <- str_replace_all(string = date, pattern = "-", replacement = "")
   ndt <- length(date)
 

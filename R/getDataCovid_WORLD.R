@@ -6,7 +6,6 @@ getDataCovid_WORLD <- function(date, country = NULL, country_id = NULL,
 
   library(stringr)
 
-  level <- match.arg(level, choices = eval(formals(getDataCovidUS)$level))
   date <- str_replace_all(string = date, pattern = "-", replacement = "")
   ndt <- length(date)
 
