@@ -1,6 +1,10 @@
+---
+title: "COVID-19 Datasets with Coordinates"
+output: html_document
+---
 
 
-# COVID-19 Datasets with Coordinates
+
 
 This repository aims to simply the visualisation of the COVID-19 datasets. Data and geometries are provided in the same file and with different formats to immediatly plot the data in R or other softwares for geospatial data.
 
@@ -13,25 +17,25 @@ For more details on the functions and packages used look at the references secti
 
 | functions | description|
 ------------|------------|
-| `getDataCovidIT()`| retrives data from this repository for the italian cases |
-|`getDataCovidUS()`| retrives data from this repository for the United States of America cases |
+| `getDataCovid_IT()`| retrives data from this repository for the italian cases |
+|`getDataCovid_US()`| retrives data from this repository for the United States of America cases |
 ------------------------------------------
 
 ### Italy
 
-Data can be downloaded first loaded the R function `getDataCovidIT()` available in the `R` folder of this repo:
+Data can be downloaded first loaded the R function `getDataCovid_IT()` available in the `R` folder of this repo:
 
 
 ```r
 library(devtools)
-source_url("https://raw.githubusercontent.com/dataallaround/mapCOVID19/master/R/getDataCovidIT.R")
+source_url("https://raw.githubusercontent.com/dataallaround/mapCOVID19/master/R/getDataCovid_IT.R")
 ```
 
-`getDataCovidIT()` requires the date in the format `yyyy-mm-dd`, and the geographical level, "regioni" or "province":
+`getDataCovid_IT()` requires the date in the format `yyyy-mm-dd`, and the geographical level, "regioni" or "province":
 
 
 ```r
-dt = getDataCovidIT(date = "2020-04-17", level = "regioni")
+dt = getDataCovid_IT(date = "2020-04-17", level = "regioni")
 names(dt)
 ```
 
@@ -47,7 +51,7 @@ for "regions", and for "province":
 
 
 ```r
-dt = getDataCovidIT(date = "2020-04-17", level = "province")
+dt = getDataCovid_IT(date = "2020-04-17", level = "province")
 names(dt)
 ```
 
@@ -59,7 +63,7 @@ Multiple `date` can be loaded and aggregate in a single file:
 
 
 ```r
-dt = getDataCovidIT(date = c("2020-04-17","2020-04-16"), level = "regioni")
+dt = getDataCovid_IT(date = c("2020-04-17","2020-04-16"), level = "regioni")
 names(dt)
 ```
 
@@ -71,40 +75,24 @@ names(dt)
 ## [13] "positive"                   "tests"                      "geometry"
 ```
 
-Data can be also downloaded using "download_dir" in `getDataCovidIT()` function, indicating the destination directory. 
+Data can be also downloaded using "download_dir" in `getDataCovid_IT()` function, indicating the destination directory. 
 
 ### USA
 
-Data can be downloaded first loaded the R function `getDataCovidUS()` available in the `R` folder of this repo:
+Data can be downloaded first loaded the R function `getDataCovid_US()` available in the `R` folder of this repo:
 
 
 ```r
 library(devtools)
-source_url("https://raw.githubusercontent.com/dataallaround/mapCOVID19/master/R/getDataCovidUS.R")
+source_url("https://raw.githubusercontent.com/dataallaround/mapCOVID19/master/R/getDataCovid_US.R")
 ```
 
-`getDataCovidUS()` requires the date in the format `yyyy-mm-dd`, for only the states of US:
+`getDataCovid_US()` requires the date in the format `yyyy-mm-dd`, for only the states of US:
 
 
 ```r
-dtUS = getDataCovidUS(date = "2020-04-17")
-names(dt)
-```
-
-```
-##  [1] "date"                       "ripartizione"               "regione"                   
-##  [4] "hospitalized"               "ventilation"                "hospitalized_total"        
-##  [7] "confinement"                "current_positive"           "variation_current_positive"
-## [10] "new_positive_total"         "recovered"                  "death"                     
-## [13] "positive"                   "tests"                      "geometry"
-```
-
-Multiple `date` can be loaded and aggregate in a single file:
-
-
-```r
-dt = getDataCovidUS(date = c("2020-04-17","2020-04-16"))
-names(dt)
+dtUS = getDataCovid_US(date = "2020-04-17")
+names(dtUS)
 ```
 
 ```
@@ -115,8 +103,92 @@ names(dt)
 ## [17] "geometry"
 ```
 
-Data can be also downloaded using "download_dir" in `getDataCovidUS()` function, indicating the destination directory. 
+Multiple `date` can be loaded and aggregate in a single file:
 
+
+```r
+dtUS = getDataCovid_US(date = c("2020-04-17","2020-04-16"))
+names(dtUS)
+```
+
+```
+##  [1] "abbr"                 "state"                "date"                 "Confirmed"           
+##  [5] "Deaths"               "Recovered"            "Active"               "FIPS"                
+##  [9] "Incident_Rate"        "People_Tested"        "People_Hospitalized"  "Mortality_Rate"      
+## [13] "UID"                  "ISO3"                 "Testing_Rate"         "Hospitalization_Rate"
+## [17] "geometry"
+```
+
+
+Data can be also downloaded using "download_dir" in `getDataCovid_US()` function, indicating the destination directory. 
+
+
+### WORLD
+
+Data can be downloaded first loaded the R function `getDataCovid_WORLD()` available in the `R` folder of this repo:
+
+
+```r
+library(devtools)
+source_url("https://raw.githubusercontent.com/dataallaround/mapCOVID19/master/R/getDataCovid_WORLD.R")
+```
+
+`getDataCovid_WORLD()` requires the date in the format `yyyy-mm-dd`, for only the states of US:
+
+
+```r
+dtWD = getDataCovid_WORLD(date = "2020-04-17")
+names(dtWD)
+```
+
+```
+##  [1] "date"                 "country"              "country_id"           "iso3"                
+##  [5] "region"               "deaths"               "cumulative_deaths"    "confirmed"           
+##  [9] "cumulative_confirmed" "geometry"
+```
+
+Multiple `date` can be loaded and aggregate in a single file:
+
+
+```r
+dtWD = getDataCovid_WORLD(date = c("2020-04-17","2020-04-16"))
+names(dtWD)
+```
+
+```
+##  [1] "date"                 "country"              "country_id"           "iso3"                
+##  [5] "region"               "deaths"               "cumulative_deaths"    "confirmed"           
+##  [9] "cumulative_confirmed" "geometry"
+```
+
+
+Specific countries can be download used `country` for the country name, `country_id` for iso2 country id, and `country_iso3` for iso3 country id.
+
+
+```r
+dtWD = getDataCovid_WORLD(date = "2020-04-19", country =  "Italy")
+names(dtWD)
+```
+
+```
+##  [1] "date"                 "country"              "country_id"           "iso3"                
+##  [5] "region"               "deaths"               "cumulative_deaths"    "confirmed"           
+##  [9] "cumulative_confirmed" "geometry"
+```
+
+
+```r
+  dtWD = getDataCovid_WORLD(date = c("2020-04-18","2020-04-19"), country_iso3 =  c("ITA", "ESP"))
+  names(dtWD)
+```
+
+```
+##  [1] "date"                 "country"              "country_id"           "iso3"                
+##  [5] "region"               "deaths"               "cumulative_deaths"    "confirmed"           
+##  [9] "cumulative_confirmed" "geometry"
+```
+
+Data can be also downloaded using "download_dir" in `getDataCovid_US()` function, indicating the destination directory. 
 
 ## Static maps in R
 
@@ -129,8 +201,9 @@ library(tmap)
 library(cartography)
 suppressMessages(tmap_mode("plot"))
 
-dt = getDataCovidIT(date = "2020-04-17", level = "regioni")
-dtUS = getDataCovidUS(date = "2020-04-17")
+dt = getDataCovid_IT(date = "2020-04-17", level = "regioni")
+dtUS = getDataCovid_US(date = "2020-04-17")
+dtWD = getDataCovid_WORLD(date = "2020-04-19")
 ```
 
 
@@ -139,7 +212,7 @@ dtUS = getDataCovidUS(date = "2020-04-17")
 tm_shape(dt) + tm_borders() + tm_fill("positive") + tm_layout(frame = FALSE)
 ```
 
-<img src="README_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
 
 
 ```r
@@ -156,8 +229,18 @@ print(alaska, vp = alk)
 print(hawaii, vp = haw)
 ```
 
-<img src="README_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
 
+
+```r
+tm_shape(dtWD) + tm_borders() + tm_fill("deaths", n = 10) + tm_layout(frame = FALSE, legend.show = TRUE)
+```
+
+```
+## Warning: The shape dtWD contains empty units.
+```
+
+<img src="README_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -165,35 +248,44 @@ print(hawaii, vp = haw)
 tm_shape(dt) + tm_borders() + tm_fill("positive", n = 10) + tm_facets("regione")
 ```
 
-<img src="README_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
 
 
 For different date we can plot as follows:
 
 
 ```r
-dt = getDataCovidIT(date = c("2020-04-17","2020-04-16","2020-04-15"), level = "regioni")
+dt = getDataCovid_IT(date = c("2020-04-17","2020-04-16","2020-04-15"), level = "regioni")
 tm_shape(dt) + tm_borders() + tm_fill("positive") + tm_facets("date")
 ```
 
-<img src="README_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" />
+
+
+
+```r
+dtWD = getDataCovid_WORLD(date = c("2020-04-01","2020-04-19"), country_iso3 =  c("ITA", "ESP"))
+tm_shape(dtWD) + tm_borders() + tm_fill("deaths") + tm_facets(c("date","country"))
+```
+
+<img src="README_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" />
 
 Starting from `nuts3` (`regions`), we can aggregate, for example, by `nuts1` (`ripartizione`)
 
 
 ```r
-dt = getDataCovidIT(date = c("2020-04-17"), level = "province")
+dt = getDataCovid_IT(date = c("2020-04-17"), level = "province")
 dt_aggr <- aggregate(dt[,"positive"], by = list( group = dt[,"ripartizione", drop = TRUE]), FUN = sum)
 tm_shape(dt_aggr) + tm_borders() + tm_fill("positive")
 ```
 
-<img src="README_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+<img src="README_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" />
 
 ```r
 tm_shape(dt_aggr) + tm_borders() + tm_fill("positive") + tm_facets("group")
 ```
 
-<img src="README_files/figure-html/unnamed-chunk-13-2.png" width="672" style="display: block; margin: auto;" />
+<img src="README_files/figure-html/unnamed-chunk-20-2.png" width="672" style="display: block; margin: auto;" />
 
 ## Dynamic map in R
 
@@ -203,8 +295,8 @@ library(tmap)
 library(mapview)
 suppressMessages(tmap_mode("view"))
 
-dt = getDataCovidIT(date = "2020-04-17", level = "regioni")
-dtUS = getDataCovidUS(date = "2020-04-17")
+dt = getDataCovid_IT(date = "2020-04-17", level = "regioni")
+dtUS = getDataCovid_US(date = "2020-04-17")
 ```
 
 
@@ -234,6 +326,8 @@ mapview(dtUS, zcol = "Confirmed")
 - [`ISTAT`](https://www.istat.it/it/archivio/222527)
 - [`United States Census Bureau`](https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html)
 - [`Center For Systems Science and Engineering at JHU`](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data)
+- [`World Health Organization`](https://www.who.int)
+- [`Eurostat Country GISCO`](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries)
 
 ## References
 
