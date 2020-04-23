@@ -2,7 +2,7 @@
 
 # COVID-19 Datasets with Coordinates
 
-
+[![DOI](https://zenodo.org/badge/256482318.svg)](https://zenodo.org/badge/latestdoi/256482318)
 
 
 This repository aims to simplify the visualisation of the COVID-19 datasets. Data and geometries are provided in the same file and with different formats to immediatly plot the data in R or other softwares for geospatial data.
