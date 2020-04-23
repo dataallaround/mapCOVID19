@@ -189,7 +189,7 @@ names(dtWD)
 
 Data can be also downloaded using "download_dir" in `getDataCovid_US()` function, indicating the destination directory. 
 
-## Static maps in R
+## Static map examples in R
 
 Some examples to map the data in R software.
 
@@ -282,7 +282,7 @@ tm_shape(dt_aggr) + tm_borders() + tm_fill("positive") + tm_facets("group")
 
 <img src="README_files/figure-html/unnamed-chunk-20-2.png" width="672" style="display: block; margin: auto;" />
 
-## Dynamic map in R
+## Dynamic map examples in R
 
 
 ```r
