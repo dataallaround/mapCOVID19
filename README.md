@@ -11,8 +11,21 @@ The `R` folder provides functions to directly download the data in `R`, for _Ita
 
 For more details on the functions and packages used look at the references section.
 
+Table of contents
+=================
 
-## Download in R (`getDataCovid`)
+  * [Download in R](#download-in-r)
+    + [Italy](#italy)
+    + [USA](#usa)
+    + [WORLD](#world)
+  * [Static map examples in R](#static-map-examples-in-r)
+  * [Dynamic map examples in R](#dynamic-map-examples-in-r)
+  * [Sources](#sources)
+  * [References](#references)
+  * [Citation](#citation)
+
+
+## Download in R
 
 | functions | description|
 ------------|------------|
