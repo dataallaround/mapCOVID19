@@ -342,3 +342,20 @@ mapview(dtUS, zcol = "Confirmed")
     doi: 10.18637/jss.v084.i06 (URL: https://doi.org/10.18637/jss.v084.i06).
   - https://cran.r-project.org/web/packages/tmap/vignettes/tmap-getstarted.html
   
+## Citation
+
+Serafini A. (2020). dataallaround/mapCOVID19: mapCOVID19 (Version v1.0) [Data set]. Zenodo. http://doi.org/10.5281/zenodo.3763033
+
+```
+@dataset{alessio_2020_3763033,
+  author       = {Alessio},
+  title        = {dataallaround/mapCOVID19: mapCOVID19},
+  month        = apr,
+  year         = 2020,
+  publisher    = {Zenodo},
+  version      = {v1.0},
+  doi          = {10.5281/zenodo.3763033},
+  url          = {https://doi.org/10.5281/zenodo.3763033}
+}
+
+```
