@@ -336,6 +336,7 @@ mapview(dtUS, zcol = "Confirmed")
 - [`Center For Systems Science and Engineering at JHU`](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data)
 - [`World Health Organization`](https://www.who.int)
 - [`Eurostat Country GISCO`](https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data/administrative-units-statistical-units/countries)
+- [`Apple Mobility Trends Reports`](https://www.apple.com/covid19/mobility)
 
 ## References
 
