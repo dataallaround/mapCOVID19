@@ -3,7 +3,7 @@
 # COVID-19 Datasets with Coordinates
 
 [![DOI](https://zenodo.org/badge/256482318.svg)](https://zenodo.org/badge/latestdoi/256482318)
-
+[![CodeFactor](https://www.codefactor.io/repository/github/dataallaround/mapcovid19/badge/master)](https://www.codefactor.io/repository/github/dataallaround/mapcovid19/overview/master)
 
 This repository aims to simplify the visualisation of the COVID-19 datasets. Data and geometries are provided in the same file and with different formats to immediately plot the data in R or other software for geospatial data.
 
