@@ -4,8 +4,8 @@ getDataCovid_US <- function(date = NULL, FromTo = NULL, by = c("day", "week", "m
                             level = c("states"), download_dir = NULL)
 {
 
-  require(stringr)
-  require(httr)
+  library(stringr)
+  library(httr)
 
   level <- match.arg(level, choices = eval(formals(getDataCovid_US)$level))
 

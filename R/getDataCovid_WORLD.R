@@ -5,8 +5,8 @@ getDataCovid_WORLD <- function(date = NULL, FromTo = NULL,  by = c("day", "week"
                                country_iso3 = NULL, download_dir = NULL)
 {
 
-  require(stringr)
-  require(httr)
+  library(stringr)
+  library(httr)
 
 
   if(is.null(date) & is.null(FromTo)){
